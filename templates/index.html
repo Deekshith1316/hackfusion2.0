@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarePulse AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Healthcare intelligence</p>
+          <h1>CarePulse AI</h1>
+        </div>
+        <button class="cta-button">+ Add patient</button>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="tag">IoT + AI remote patient monitoring</p>
+          <h2>Realtime care insights for every patient in your network.</h2>
+          <p class="summary">
+            Smart wearables, connected devices, and AI-driven anomaly detection help care teams identify risk early and act faster.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <div class="mini-stat">
+            <span class="label">Live alerts</span>
+            <strong id="liveAlerts">--</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="label">Avg risk</span>
+            <strong id="avgRisk">--</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card success">
+          <span>Stable</span>
+          <strong id="stableCount">0</strong>
+        </article>
+        <article class="stat-card warning">
+          <span>Watch</span>
+          <strong id="watchCount">0</strong>
+        </article>
+        <article class="stat-card danger">
+          <span>Critical</span>
+          <strong id="criticalCount">0</strong>
+        </article>
+      </section>
+
+      <section class="section-title-row">
+        <div>
+          <p class="eyebrow">Active patients</p>
+          <h3>Monitoring dashboard</h3>
+        </div>
+        <span id="generatedAt" class="last-update">Updated just now</span>
+      </section>
+
+      <main id="patientGrid" class="patient-grid"></main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
